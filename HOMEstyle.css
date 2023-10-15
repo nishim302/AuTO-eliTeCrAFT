@@ -1,0 +1,104 @@
+html,
+body {
+  margin: 0;
+  position: relative; /* Required for the pseudo-element */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://drive.google.com/uc?export=view&id=12e64Mq-89vF1Xp-nUHsVZf94vYS_Kw8_);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  opacity: 0.90; /* Adjust the opacity value as needed */
+  z-index: -1; /* Push the pseudo-element behind the content */
+}
+
+header{
+    background-color: transparent;
+    height: 70px;
+    position: relative;
+}
+#icon{
+    height: 50px;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+#logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+main {
+  position: relative;
+}
+.main1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    height: 80vh;
+    padding-right:15%; /* Adjust the gap between buttons */
+}
+
+#img1,#img2,#img3,#img4 {
+  width: 40%;
+  position: absolute;
+  top: 60px;
+  left: 12%;
+}
+.button {
+  background-color: #ffffff;
+  border: none;
+  width: fit-content;
+  color: rgb(0, 0, 0);
+  padding: 40px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  margin:20px;
+  box-shadow: 0 8px 16px 0 rgba(228, 192, 7, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 12px;
+  font-size: larger;
+}
+
+  .button:hover {
+    background-color: #ff6f00; 
+    color: white;
+    transition-duration: 0.4s;
+  }
+  .button:active {
+    background-color: #ff8426;
+    box-shadow: 0 5px #ef651b;
+    transform: translateY(4px);
+  }
+  footer {
+    position: fixed;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    background: black;
+    align-items: center;
+    padding-top: 5px;
+  }
+  .contact_container{
+    min-height: 60px;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 8%;
+  }
+.contact-us{
+  padding-right: 9%;
+}
+.location{
+  padding-left: 9%;
+}

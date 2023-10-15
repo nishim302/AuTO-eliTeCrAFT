@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="HOMEstyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <img src="Licon.png" id="icon" alt="icon">
+        <img src="logo.png" id="logo" alt="logo" style="height: 50px;">
+    </header>
+    <main>
+        <div class="main1">
+         <a href="services.html" class="button" id="1">Services</a>
+         <a href="shops.html" class="button" id="2">Primium CAR products</a>
+         <a href="shops.html" class="button" id="3">Normal CAR products</a>
+         <a href="about.html" class="button" id="4">About</a>
+        </div>
+          
+          <img src="https://drive.google.com/uc?export=view&id=1w2ztguxqQHlo1_lAewvFf6oIea6UzcCc" id="img1" alt="">
+          <img src="https://drive.google.com/uc?export=view&id=1QT0LQmC-ygGrsgWudnQF4mvrY4W7w68Z" id="img2" alt="">
+          <img src="https://drive.google.com/uc?export=view&id=14mmjj4jifc6hRMXi1uwezKNw_Ds-mAld" id="img3" alt="">
+          <img src="https://drive.google.com/uc?export=view&id=1koTdCkkde7umqeg2bC3ialaunFZa5VeM" id="img4" alt="">
+      </main>
+      <script>
+        img1.style.display = "none";
+        img2.style.display = "none";
+        img3.style.display = "none";
+        img4.style.display = "none";
+        $(document).ready(function() {
+           $("#1").hover(
+              function() {
+                 $("#img1").css("display", "block");
+              },
+              function() {
+                 $("#img1").css("display", "none");
+              }
+           );
+           $("#2").hover(
+              function() {
+                 $("#img2").css("display", "block");
+              },
+              function() {
+                 $("#img2").css("display", "none");
+              }
+           );
+           $("#3").hover(
+              function() {
+                 $("#img3").css("display", "block");
+              },
+              function() {
+                 $("#img3").css("display", "none");
+              }
+           );
+           $("#4").hover(
+              function() {
+                 $("#img4").css("display", "block");
+              },
+              function() {
+                 $("#img4").css("display", "none");
+              }
+           );
+        });
+        
+     </script>
+      <footer>
+       <a href="https://docs.google.com/forms/d/e/1FAIpQLSfa8AzDypnO_ffq1U0WzXHgiiFnB9FmWR3CruwDzIhsKj3Jww/viewform?usp=pp_url"> <center>Contact us</center></a>
+        <div class="contact_container">
+          <div class="contact-us">
+            <i class="fa-solid fa-phone">+91-65125512</i> 
+
+          </div>
+          <div class="mail-to">
+            <i class="fa-solid fa-envelope">autonxtgen@gmail.com</i> 
+
+          </div>
+          <div class="location">
+            <i class="fa-solid fa-map-location-dot">AuTo nXT Gen,<br>BANGALORE</i>
+            INDIA- 560032
+          </div>
+        </div>
+      </footer>
+      
+</body>
+</html>

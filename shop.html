@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping Website</title>
+  <style>
+    /* Custom CSS */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0%;
+      
+      background: #222;
+      background-image: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(71, 71, 71));
+    }
+
+    .container {
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .product {
+      display: inline-block;
+      width: 33%;
+      margin: 10px;
+      padding: 20px;
+      border: 1px solid #ffffff;
+      text-align: center;
+      color: #868686;
+      border-radius: 20px;
+      background-color: #f7b42c;
+      background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);
+
+    }
+
+    .product img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+    }
+
+    .product-title {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .product-description {
+      margin-top: 5px;
+      color: #6c6c6c;
+    }
+
+    .product-price {
+      margin-top: 5px;
+      font-weight: bold;
+    }
+
+    .quantity-input {
+      width: 40px;
+      text-align: center;
+    }
+
+    .add-to-cart {
+      margin-top: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    .shopping-cart {
+      margin-top: 30px;
+    }
+
+    .shopping-cart table {
+      width: 100%;
+    }
+
+    .shopping-cart th,
+    .shopping-cart td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .shopping-cart th {
+      background-color: #f0f0f0;
+    }
+
+    .total {
+      color: aquamarine;
+      margin-top: 20px;
+      text-align: center;
+      font-weight: bolder;
+      font-size:x-large;
+    }
+    #home,#service{
+         text-decoration: none;
+         width:16.66%;       
+         color: white;
+         text-align:center;
+         font-size:large;
+         font-weight:bolder;
+         padding-left: 50%;
+      }
+      #shop,#about{
+         text-decoration: none;
+         text-align:center;
+         width:16.66%;       
+        color: rgb(247, 151, 30);
+        font-size:large;
+        font-weight:bolder;
+        padding-left: 50%;
+    }
+    .ct{
+      background-color: orange;
+    }
+
+  </style>
+</head>
+
+<body ng-app="shoppingApp" ng-controller="shoppingController">
+  <header>
+    <center><img src="logo.png" id="logo" alt="logo" style="height: 50px;">
+    <br><br><br>
+    <table width="100%" cellspacing=10>
+     <tr>
+         <td ><a href="home.html" target="_parent" id="home">HOME</a></td>
+         <td ><a href="shop.html" target="containt" id="shop">SHOP</a></td>
+         <td ><a href="services.html" target="containt" id="service">SERVICE</a></td>
+         <td ><a href="about.html" target="containt" id="about">ABOUT</a></td>
+     </tr>
+ </table></center>
+</header>
+  <center><div class="container">
+    <h1 style="color: #fff;">Shopping Website</h1>
+    <div>
+      <div class="product" ng-repeat="product in products">
+        <img ng-src="{{product.image}}" alt="{{product.name}}">
+        <div class="product-title">{{product.name}}</div>
+        <div class="product-description">{{product.description}}</div>
+        <div class="product-price">{{product.price | currency}}</div>
+        <div>
+          <label for="quantity-{{$index}}">Quantity:</label>
+          <input type="number" class="quantity-input" id="quantity-{{$index}}" ng-model="product.quantity">
+        </div>
+        <button class="add-to-cart" ng-click="addToCart(product)">Add to Cart</button>
+      </div>
+    </div>
+    <div class="shopping-cart">
+      <h3>Shopping Cart</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in cart" class="ct">
+            <td>{{item.name}}</td>
+            <td>{{item.price | currency}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.total | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="total">
+        <h4>Total: {{cartTotal() | currency}}</h4>
+      </div>
+    </div>
+  </div></center>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+  <script>
+    // AngularJS application
+    var app = angular.module('shoppingApp', []);
+
+    app.controller('shoppingController', function($scope) {
+      $scope.products = [{
+          name: 'Product 1',
+          description: 'All in one Kit',
+          price: 50.99,
+          image: "https://images-na.ssl-images-amazon.com/images/I/91Jp4URMoVL.jpg",
+          quantity: 0
+        },
+        {
+          name: 'Polish liquid',
+          description: 'Polishing the car',
+          price: 19.99,
+          image: 'https://i.ndtvimg.com/i/2017-02/car-care-products_827x510_61487074859.jpg',
+          quantity: 0
+        },
+        {
+          name: 'Basic tool kit',
+          description: 'All in one tool kit',
+          price: 29.99,
+          image: 'https://th.bing.com/th/id/OIP.zT0cSX5N0n3MTbG8Y4X4HAHaHa?pid=ImgDet&rs=1',
+          quantity: 0
+        },
+        {
+          name: 'REader',
+          description: 'REadding is very acurete',
+          price: 39.99,
+          image: 'https://th.bing.com/th/id/OIP.qqcfVVaxqdTeclRt8MLhTgHaH8?pid=ImgDet&rs=1',
+          quantity: 0
+        },
+        {
+          name: 'PScreen',
+          description: 'hd 4k in case display',
+          price: 39.99,
+          image: 'https://th.bing.com/th/id/OIP.LdZOhCXc-ASJnIDx_7w4XwHaEY?w=290&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7',
+          quantity: 0
+        },
+        {
+          name: 'Wheel',
+          description: 'Longlasting tire of all the time',
+          price: 49.99,
+          image: 'https://th.bing.com/th/id/OIP.z8mFnTud29isRNBUsdB88QHaEF?pid=ImgDet&rs=1',
+          quantity: 0
+        },
+        {
+          name: 'Car Cover',
+          description: 'Best product to save your car from dust and rain',
+          price: 9.99,
+          image: 'https://th.bing.com/th/id/OIP.s49Zre-ejfsn3wDawrqMKwHaE9?pid=ImgDet&rs=1',
+          quantity: 0
+        },
+        {
+          name: 'HEad light',
+          description: 'LED HEadlight White',
+          price: 99.99,
+          image: 'https://th.bing.com/th/id/OIP.0mvJzkpsE66vM3CRdae2AgHaEK?pid=ImgDet&rs=1',
+          quantity: 0
+        },
+
+      ];
+
+      $scope.cart = [];
+
+      $scope.addToCart = function(product) {
+        if (product.quantity > 0) {
+          var item = {
+            name: product.name,
+            price: product.price,
+            quantity: product.quantity,
+            total: product.price * product.quantity
+          };
+          $scope.cart.push(item);
+          // Reset quantity to zero after adding to cart
+          product.quantity = 0;
+        }
+      };
+
+      $scope.cartTotal = function() {
+        var total = 0;
+        for (var i = 0; i < $scope.cart.length; i++) {
+          total += $scope.cart[i].total;
+        }
+        return total;
+      };
+    });
+  </script>
+</body>
+
+</html>

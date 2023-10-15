@@ -1,4 +1,4 @@
-# AuTo-nXTGen
+# AuTo-EliteCraft
 This repository contains the code for a website of a garage that showcases the shop's services and provides information about their offerings. The website serves as a platform for customers to explore the range of services available and learn more about the garage.
 
 # Features
@@ -8,7 +8,17 @@ Service Listings: The website displays a comprehensive list of services offered 
 The website is built using the following technologies:
 
  # HTML: 
- Markup language for creating the structure and content of web pages. CSS: Styling language used to enhance the visual appearance and layout of the website. JavaScript: Programming language that enables interactive features and dynamic functionality. Bootstrap: CSS framework for responsive and mobile-first web development. jQuery: JavaScript library for simplified DOM manipulation and event handling. Angular: Frontend framework for building scalable and dynamic web applications.
+ Markup language for creating the structure and content of web pages. 
+ # CSS: 
+ Styling language used to enhance the visual appearance and layout of the website. 
+ # JavaScript: 
+ Programming language that enables interactive features and dynamic functionality. 
+ # Bootstrap: 
+ CSS framework for responsive and mobile-first web development. 
+ # jQuery: 
+ JavaScript library for simplified DOM manipulation and event handling. 
+ # Angular: 
+ Frontend framework for building scalable and dynamic web applications.
 
 # Acknowledgements
 The project was inspired by the need to create an informative and user-friendly website for a garage. Thanks to the contributors and maintainers of the technologies and libraries used in this project
